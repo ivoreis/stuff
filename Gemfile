@@ -14,15 +14,15 @@ gem 'rmagick'
 gem 'railroady'
 
 gem 'paper_trail'
-gem 'forum', :path => '/home/dasssss/Dropbox/Dissertacao/Code/socialth.me/plugins/forum'
-gem 'mailboxer', :path => '/home/dasssss/Dropbox/Dissertacao/Code/socialth.me/plugins/mailboxer'
-gem 'acts_as_activity', :path => '/home/dasssss/Dropbox/Dissertacao/Code/socialth.me/plugins/acts_as_activity'
-gem 'acts_as_api', :path => '/home/dasssss/Dropbox/Dissertacao/Code/socialth.me/plugins/acts_as_api'
-gem 'acts_as_commentable', :path => '/home/dasssss/Dropbox/Dissertacao/Code/socialth.me/plugins/acts_as_commentable'
-gem 'acts_as_favorite', :path => '/home/dasssss/Dropbox/Dissertacao/Code/socialth.me/plugins/acts_as_favorite'
-gem 'acts_as_taggable' , :path => '/home/dasssss/Dropbox/Dissertacao/Code/socialth.me/plugins/acts_as_taggable'
-gem 'acts_as_votable', :path => '/home/dasssss/Dropbox/Dissertacao/Code/socialth.me/plugins/acts_as_votable'
-gem 'acts_as_viewable', :path => '/home/dasssss/Dropbox/Dissertacao/Code/socialth.me/plugins/acts_as_viewable'
+
+gem "forum", :github => "ivoreis/forum"
+gem "mailboxer", :github => "ivoreis/mailboxer"
+gem "acts_as_activity", :github => "ivoreis/acts_as_activity"
+gem "acts_as_commentable", :github => "ivoreis/acts_as_commentable"
+gem "acts_as_favorite", :github => "ivoreis/acts_as_favorite"
+gem "acts_as_taggable", :github => "ivoreis/acts_as_taggable"
+gem "acts_as_votable", :github => "ivoreis/acts_as_votable"
+gem "acts_as_viewable", :github => "ivoreis/acts_as_viewable"
 
 gem 'thin'
 gem 'thinking-sphinx'
