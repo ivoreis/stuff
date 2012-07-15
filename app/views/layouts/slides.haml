@@ -1,0 +1,18 @@
+!!! 5
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+      %title ePatientCare - Novel social health environment
+      %meta{:content => "ePatientCare slides presentation for the Master Dissertation - FEUP 2012", :name => "description"}
+        %meta{:content => "Ivo Reis", :name => "author"}
+          %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
+          %meta{:content => "black-translucent", :name => "apple-mobile-web-app-status-bar-style"}/
+          %link{:href => "http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic", :rel => "stylesheet", :type => "text/css"}
+          %link{:href => "stylesheets/style.css", :rel => "stylesheet"}
+          %script{:src => "javascripts/script.js"}
+  %body
+    = yield :sections
+    .pagination
+      .slide_number 1
+      .progress
+        .bar

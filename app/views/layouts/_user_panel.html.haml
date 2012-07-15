@@ -1,0 +1,27 @@
+- conversations_count = current_person.mailbox.new_messages_count if current_person
+- notifications = current_person.mailbox.notifications(:except=>:Message).unread.count   if current_person
+
+%ul.nav.float-right
+  - if user_signed_in?
+    %li.utility_link
+      = link_to main_app.messages_path do
+        %span #{t('global.text.link.messages')}
+      - if conversations_count>0
+        %span.badge.badge-info #{conversations_count}
+    %li.utility_link
+      = link_to main_app.messages_notifications_path do
+        %span #{t('global.text.link.notifications')}
+      - if notifications>0
+        %span.badge.badge-info #{notifications}
+    - if current_person.is? :staff
+      %li.utility_link
+        = link_to(t('global.text.link.admin'), rails_admin.dashboard_path)
+    %li.utility_link
+      = link_to(t('global.text.link.settings'), main_app.profile_settings_path)
+    %li.utility_link
+      = link_to(t('global.text.link.sign_out'), main_app.destroy_user_session_path, :method=>'delete')
+  - else
+    %li
+      = link_to t('global.text.link.sign_in'), main_app.new_user_session_path
+    %li
+      = link_to t('global.text.link.sign_up'), main_app.new_user_registration_path

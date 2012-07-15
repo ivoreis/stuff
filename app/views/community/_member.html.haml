@@ -1,0 +1,17 @@
+.entry_member{id: "#{member.class.to_s.downcase}_#{member.slug}"}
+  .entry_avatar_image
+    = image_tag avatar_of(member, :thumb), {:width => 80}
+  - if member == current_person
+    .entry_me.badge.badge-info #{t('global.text.community.me')}
+  .entry_header #{h member.name.titleize}
+  .entry_member_at #{t('global.text.community.member_since')} #{l(member.created_at, :format => :default)}
+  - if member.last_sign_in_at
+    .entry_last_seen #{t('global.text.community.last_seen')} #{time_ago_in_words(member.last_sign_in_at)}
+
+:javascript
+  $(#{member.class.to_s.downcase}_#{member.slug}).click(function(){
+    string = $(this).attr('id');
+    id = string.substring(string.indexOf("_")+1,string.length);
+    window.location = "members/view/"+id;
+  });
+

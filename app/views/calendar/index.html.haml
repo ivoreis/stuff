@@ -1,0 +1,269 @@
+.activator{"data-toggle"=>'modal', "href"=>'#event'}
+#calendar
+#event.modal.hide.fade{:style=>"display: none"}
+  .modal-header
+    %button.close{ "data-dismiss" => 'modal'} ×
+    %h3 #{t('global.text.event.new')}
+
+  .modal-body
+    = simple_form_for @event do |f|
+      .field
+        = f.input :id, :as => :hidden
+        = f.input :title, :placeholder => t('global.text.event.title_placeholder')
+        = f.input :details, :as => :text, input_html: {rows: 3, style: "width: 400px"}, :placeholder => t('global.text.event.details_placeholder')
+        .calendar_day_block
+          = f.input :starts_at, :as => :string, :input_html => { :class => 'date' }
+          = f.input :starts_hour, :as => :string, :input_html => { :class => 'time' }
+        .calendar_day_block
+          = f.input :ends_at, :as => :string, :input_html => { :class => 'date' }
+          = f.input :ends_hour, :as => :string, :input_html => { :class => 'time' }
+        = f.input :all_day, :as => :boolean, :hint => t('global.text.event.all_day_hint')
+  .modal-footer
+
+:javascript
+  $(document).ready(function() {
+    var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+
+    var event_id = $('#event_id');
+    var event_title       = $("#event_title");
+    var event_details     = $("#event_details");
+    var event_allday      = $('#event_all_day');
+    var event_start_date  = $("#event_starts_at");
+    var event_end_date    = $("#event_ends_at");
+    var event_start_hour  = $("#event_starts_hour");
+    var event_end_hour    = $("#event_ends_hour");
+
+
+    //$(".fc-header-title").ready(function(){
+    //  $('.fc-button-today').after('<input value="" id="month_selector"/>')
+    //  $("#month_selector").datepicker(
+    //    {
+    //      changeMonth: true,
+    //      changeYear: true,
+    //      showButtonPanel: true,
+    //      dateFormat: 'mm/yy',
+    //      beforeShow: function(input, inst) {
+    //        console.log($('#ui-datepicker-calendar'));
+    //      }
+    //    }
+    //  );
+    //});
+
+    function hours_toggle(){
+      if(event_allday.is(':checked'))
+        $('.modal-body .time').closest('.control-group').hide();
+      else
+        $('.modal-body .time').closest('.control-group').show();
+    };
+
+    function valid_form(){
+      $('.help-inline').parent('.control-group') .remove();
+      $('.help-inline').remove();
+      var error = false;
+      var start_date = new Date(event_start_date.val()+" "+event_start_hour.val());
+      var end_date = new Date(event_end_date.val()+" "+event_end_hour.val());
+      if(end_date < start_date){
+        var message = '#{t("global.text.event.date_error")}';
+        addErrorClass(event_start_date);
+        addErrorClass(event_end_date);
+        addErrorClass(event_start_hour);
+        addErrorClass(event_end_hour);
+        $('.control-group').last().prev().after("<div class='control-group error' style='clear: both'><span class='help-inline'>"+message +"</span></div>")
+        error = true;
+      }
+      else{
+         removeErrorClass(event_start_date);
+         removeErrorClass(event_end_date);
+         removeErrorClass(event_start_hour);
+         removeErrorClass(event_end_hour);
+      }
+      if(!valid_field(event_title)){
+        addErrorClass(event_title);
+        var group = event_title.closest('.control-group');
+        message = '#{t("global.text.event.title_error")}';
+        error = true;
+        event_title.parent().append("<span class='help-inline'>"+message+"</span>");
+      }
+
+      return error ? false : true;
+    }
+
+    function addErrorClass(field){
+     field.closest('.control-group').addClass('error');
+    }
+
+    function removeErrorClass(field){
+      field.closest('.control-group').removeClass('error');
+    }
+
+    function valid_field(field){
+     if($(field).val()!= "") return true;
+    }
+
+    event_allday.live('change', function(){
+      hours_toggle();
+    });
+
+    function valuesToSubmit(){
+      var s_date = new Date(event_start_date.val()+" "+event_start_hour.val());
+      var e_date = new Date(event_end_date.val()+" "+event_end_hour.val());
+      return  {
+        event: {
+          starts_at: s_date,
+          ends_at: e_date,
+          title: event_title.val(),
+          details: event_details.val(),
+          all_day: event_allday.is(':checked')
+        }
+      };
+    }
+
+    event_start_date.datepicker();
+    event_end_date.datepicker();
+
+    $("#event").bind( "hide", function(event, ui) {
+      calendar.fullCalendar('unselect');
+    });
+
+
+    function clear_form(){
+      $('.ui-datepicker-calendar').show();
+      $('.help-inline').parent('.control-group') .remove();
+      $('.help-inline').remove();
+      event_title.val("");
+      event_details.val("");
+      removeErrorClass(event_start_date);
+      removeErrorClass(event_end_date);
+      removeErrorClass(event_start_hour);
+      removeErrorClass(event_end_hour);
+      removeErrorClass(event_title);
+    }
+
+    function create_calendar_event(data){
+       calendar.fullCalendar( 'refetchEvents' ) ;
+    };
+
+    function pad2(number) {
+         return (number < 10 ? '0' : '') + number
+    }
+
+    function getTime(date){
+      return pad2(date.getHours())+":"+pad2(date.getMinutes())
+    }
+
+    function set_footer(type){
+      if(type=="new"){
+         title = "#{t('global.text.event.new')}"
+         text_label = "#{t('action.create')}"
+         id = 'create_event'
+         loading_text =  "#{t('global.text.event.create')}"
+         submit_as = 'POST'
+         submit_url= "#{events_url}"
+         destroy=""
+      }else{
+         title = "#{t('global.text.event.edit')}"
+         text_label = "#{t('action.update')}"
+         id = 'update_event'
+         loading_text =  "#{t('global.text.event.update')}"
+         submit_as = 'PUT'
+         submit_url= "#{events_url}/"+ event_id.val()
+         destroy = "<a class='btn' href='#'>Destroy</a>"
+      }
+      $('.close').next().html(title);
+      $(".modal-footer").html(destroy+"<a href='#' class='btn' data-loading-text='"+loading_text+"' id='"+id+"'>"+text_label+"</a><a class='btn' data-dismiss='modal' href='#'>#{t('action.close')}</a>")
+
+      $("#"+id).on('click', function(){
+        if(valid_form()){
+          $(this).button('loading');
+          var jqxhr = ajax_event(id,submit_as,submit_url)
+        }
+      });
+    }
+    function ajax_event(id,type, url){
+     $.ajax(
+       {
+         type: type,
+         url: url,
+         data: valuesToSubmit(),
+         success: function(data){
+           create_calendar_event(data);
+           $('#'+id).button('reset');
+           $('#event').modal('hide');
+         },
+         dataType: 'json'
+       }
+     ).error(function(f) { console.log(f);})
+    }
+
+    function set_event_form_values(start, end, allDay, title, details, id){
+      if(allDay){
+        event_allday.attr('checked', true);
+        if(end == null) end = start;
+      }else{
+        event_allday.attr('checked', false);
+      }
+      hours_toggle();
+      event_start_date.val($.datepicker.formatDate('mm/dd/yy', start));
+      event_end_date.val($.datepicker.formatDate('mm/dd/yy', end));
+      event_start_hour.val(getTime(start));
+      event_end_hour.val(getTime(end));
+      event_title.val(title);
+      event_details.val(details);
+      event_id.val(id);
+    }
+
+    function update_event(event, allDay){
+      if (!confirm("#{t('global.text.calendar.confirm')}")) {
+          revertFunc();
+      }else{
+        set_event_form_values(event.start, event.end, allDay, event.title, event.details, event.id)
+        ajax_event('update_event','PUT','#{events_url}/'+ event.id)
+      }
+    }
+
+    var calendar = $('#calendar').fullCalendar({
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+        },
+        monthNames: #{t('calendar.month')},
+        monthNamesShort: #{t('calendar.month_short')},
+        dayNames: #{t('calendar.day')},
+        dayNamesShort: #{t('calendar.day_short')},
+        buttonText: {
+          today:    '#{t("datetime.prompts.today")}',
+          month:    '#{t("datetime.prompts.month")}',
+          week:     '#{t("datetime.prompts.week")}',
+          day:      '#{t("datetime.prompts.day")}'
+        },
+        selectable: true,
+        selectHelper: true,
+        dayClick: function(date, allDay, jsEvent, view) {
+        },
+        select: function(start, end, allDay) {
+          clear_form();
+          set_event_form_values(start, end, allDay);
+          set_footer("new");
+          $('.activator').click();
+        },
+        eventDrop: function(event,dayDelta,minuteDelta,allDay,revertFunc){
+          update_event(event,allDay);
+        },
+        eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
+          update_event(event,event.allDay);
+        },
+        eventClick: function(calEvent) {
+          clear_form();
+          set_event_form_values(calEvent.start, calEvent.end, calEvent.allDay, calEvent.title, calEvent.details, calEvent.id);
+          set_footer("edit");
+          $('.activator').click();
+        },
+        timeFormat: 'HH(:mm)',
+        editable: true,
+        events: '#{events_path+".json"}'
+    });
+  });

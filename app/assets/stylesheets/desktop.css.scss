@@ -1,0 +1,33 @@
+//768px and above
+
+@media (min-width: 979px){
+  .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    width: 900px;
+  }
+}
+@media (max-width: 979px){
+  .navbar-fixed-top .navbar-inner {
+    padding: 5px 25px 5px 25px;
+  }
+}
+
+@media (max-width: 979px) and (min-width: 768px){
+  nav-tabs, .nav-pills {
+    a{
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
+
+@media  (min-width: 980px){
+  nav-tabs, .nav-pills {
+    a{
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  .nav_pills_middle {
+    width: 50%;
+  }
+}

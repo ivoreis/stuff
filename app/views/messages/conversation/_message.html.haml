@@ -1,0 +1,8 @@
+.message.row{id: "message_#{message.id}"}
+  .message_sender_avatar.span2
+    = image_tag avatar_of(message.sender, :thumb)
+  .message_payload.span8
+    .message_sender
+      = link_to message.sender.name, member_view_path(message.sender)
+    .message_date{"data-original-title" => l(message.created_at, :format => :timeline) } #{time_ago_in_words(message.created_at)}
+    .message_content #{simple_format message.body}

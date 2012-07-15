@@ -1,0 +1,11 @@
+.comment_extra_info
+  .comment_commenter_name #{comment.commenter.name}
+  .separator
+  .comment_created_at #{l comment.created_at, format: :timeline }
+  .separator
+  .vote_counts
+    %a.show_votes.t_popover{:rel=>"popover", "data-content" => comment.like_votes.collect(&:voter).collect(&:name).join(', ') , "data-original-title"=>"Likes"}
+      #{comment.count_likes}
+      %i.icon-thumbs-up
+  .separator
+  .comment_vote_up #{link_to ( comment.voted_on_by?(current_person) ?  t('action.unlike')  : t('action.like')  ), vote_path(type: comment.class.to_s, id: comment.id), :remote => true, :method => :post, :class => "vote_menu_toggle"}

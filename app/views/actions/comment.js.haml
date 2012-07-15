@@ -1,0 +1,2 @@
+$('#social_of_#{@model.class.to_s}_#{@model.id}').replaceWith('#{escape_javascript render(:partial => "members/social_links", :locals => {entry: @model})}');
+$('.t_popover').popover();

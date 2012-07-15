@@ -1,0 +1,5 @@
+- if @model.class.to_s.demodulize === "Comment"
+  $('#comment_#{@model.id}').find(".comment_extra_info").replaceWith('#{escape_javascript render(:partial => "members/comment_extra_info", :locals => {comment: @model})}');
+- else
+  $('#social_of_#{@model.class.to_s}_#{@model.id}').replaceWith('#{escape_javascript render(:partial => "members/social_links", :locals => {entry: @model})}');
+$('.t_popover').popover();

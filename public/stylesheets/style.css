@@ -1,0 +1,289 @@
+@font-face { src: url(../fonts/BebasNeue.otf); font-family: 'bebas'; }
+@font-face { src: url(../fonts/league_gothic_webfont.ttf); font-family: 'gothic'; }
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Raleway-Thin'), url(http://themes.googleusercontent.com/static/fonts/raleway/v5/RJMlAoFXXQEzZoMSUteGWD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+    font-family: 'Alfa Slab One';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Alfa Slab One'), local('AlfaSlabOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/alfaslabone/v2/Qx6FPcitRwTC_k88tLPc-fn8qdNnd5eCmWXua5W-n7c.woff) format('woff');
+}
+@font-face {
+    font-family: 'Erica One';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Erica One'), local('EricaOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/ericaone/v2/7ct8ELB1awBkUBGJHiNceD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+    font-family: 'Nixie One';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Nixie One'), local('NixieOne'), url(http://themes.googleusercontent.com/static/fonts/nixieone/v3/gQ0PT3rPU_Et2ExNz-ahmj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Oswald '), local('Oswald'), url(http://themes.googleusercontent.com/static/fonts/oswald/v5/-g5pDUSRgvxvOl5u-a_WHw.woff) format('woff');
+}
+
+/************************************* ***** **************************************/
+/************************************* ADDED **************************************/
+body { counter-reset: chapter; }
+body { counter-reset: chapter_list; }
+.chapter { counter-increment: chapter; }
+.mark:after{
+  content: counter(chapter) "";
+}
+.index_card span{
+  counter-increment: chapter_list;
+}
+.index_card span:before {
+  content: counter(chapter_list) ". "
+}
+
+/* Progress */
+.pagination {
+overflow: hidden;
+width: 80%;
+margin-left: auto;
+margin-right: auto;
+position: absolute;
+bottom: 2%;
+left: 10%;
+}
+.slide_number {
+float: left;
+position: relative;
+margin-right: 20px;
+color: gainsboro;
+font-size: 25px;
+}
+.progress {
+position: relative;
+bottom: -10px;
+border-radius: 7px;
+width: 90%;
+float: left;
+}
+.progress .bar {
+    width:0;
+    height:10px;
+    border-radius:5px;
+    background:rgba(177, 177, 177, 0.4);
+    -webkit-transition:width 0.2s linear;
+    -moz-transition:width 0.2s linear;
+    -ms-transition:width 0.2s linear;
+    -o-transition:width 0.2s linear;
+    transition:width 0.2s linear;
+}
+.progress-off {
+    z-index:1;
+}
+
+.question, .try_it {
+font-size: 100px;
+position: absolute;
+top: 25%;
+left: 22%;
+}
+
+.question:after {
+content: '?';
+font-size: 200px;
+color: #C01801;
+display: inline-block;
+font-weight: bold;
+}
+
+.question:before, .slop:before {
+border-bottom: solid 8px #C01801;
+width: 40px;
+content: "";
+display: inline-block;
+margin-bottom: -20px;
+}
+
+.fullscreen{
+  -webkit-transform: scale(1.00); 
+  z-index: 1;
+}
+.try_it {
+line-height: 310px;
+left: 36%;
+text-decoration: initial;
+}
+.over_text {
+position: absolute;
+left: 190px;
+font-size: 90px;
+color: white;
+top: 20px;
+z-index: 1;
+}
+.mark{
+position: absolute;
+top: 250px;
+left: -2px;
+display: block;
+height: 100px;
+width: 100px;
+background-color: black;
+color: white;
+text-align: center;
+font-size: 90px;
+z-index: 1;
+}
+.index_card span {
+float: left;
+clear: both;
+font-size: 45px;
+margin-bottom: 30px;
+margin-left: 25px;
+}
+.index_card span::before {
+content: counter(chapter_list) " • ";
+font-size: 30px;
+color: #D11111;
+text-shadow: 1px 1px 1px black;
+position: relative;
+top: -5px;
+margin-right: 20px;
+}
+
+h1.strong {
+  float: right;
+  font-size: 110px;
+  margin-bottom: 100px;
+}
+
+#problem_image{
+  top: 140px;
+  position: relative;
+  height: 80%;   
+}
+#problem_chap{
+  background: white;
+}
+#solution_image, #evaluation_image{
+  height: 100%;
+}
+
+/************************************* ADDED **************************************/
+/************************************* ***** **************************************/
+
+  html { background-color: black; }
+  a { color: #C01801; } a:hover {text-decoration: underline;}
+  footer { position: absolute; bottom: 50px; right: 50px; }
+  strong, .strong {color: #C01801; text-shadow: 1px 2px 1px black;}
+  body {
+      font-family: 'bebas', arial, serif;
+      background-color: white;
+      color: black;
+      font-size: 2em;
+  }
+
+
+  /* Transition effect */
+  section {
+      -moz-transition: right 400ms linear 0s;
+      -webkit-transition: right 400ms linear 0s;
+      -ms-transition: right 400ms linear 0s;
+      transition: right 400ms linear 0s;
+      background: white;
+  }
+  section { left: -150%; }
+  section[aria-selected] { left: 0; }
+  section[aria-selected] ~ section { left: +150% }
+
+  .chapter { background-color: #F90; z-index: 1;}
+  .chapter h1 {line-height: 600px; vertical-align: middle; margin: 0; text-align: center; display: block}
+
+  h1 {
+      margin: 50px 100px 0 100px;
+      font-size: 70px;
+      text-shadow: 0px -1px 0px #000;
+      text-align: left;
+  }
+  h2 {
+      color: #FAE50B;
+      margin: 70px 0 0 0;
+      font-size: 40px;
+      text-align: center;
+  }
+  h3 {
+  color: black;
+  margin: 30px 0 0 0;
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Oswald', arial, serif;
+  }
+
+  ul {
+      margin-top: 70px;
+      font-size: 35px;
+      text-align: right;
+      border-right: 4px solid white;
+      padding-right: 40px;
+      min-width: 310px;
+      margin-left: 50px;
+      display: inline-block;
+  }
+  q, p {
+      margin: 50px auto 0 auto;
+      width: 500px;
+  }
+  q:after {content: ""}
+  q:before {content: ""}
+  q {
+      display: block;
+      margin-top: 140px;
+  }
+  video {
+      position: absolute;
+      top: 210px;
+      width: 260px;
+      left: 445px;
+      box-shadow: 0 0 10px black;
+  }
+  #arrow {
+      position: absolute;
+      top: 165px;
+      left: 460px;
+      font-size: 100px;
+      color: white;
+
+  }
+  li {list-style-type: none}
+
+/*/ /*********************  DZSlides CORE 2.0b1 ****************************/
+/*/ ************************************************************************/
+/*/ ************************************************************************/
+/*/ ************************************************************************/
+/*/ ************************************************************************/
+/*/ This block of code is not supposed to be edited, but if you want to change the behavior of the slides, feel free to hack it ;)*/
+/*/ Default Style
+*/
+ * { margin: 0; padding: 0; }
+  details {display: none;}
+  body {
+    width: 800px; height: 600px;
+    margin-left: -400px; margin-top: -300px;
+    position: absolute; top: 50%; left: 50%;
+    overflow: hidden;
+  }
+  html {
+    overflow: hidden;
+  }
+  section {
+    position: absolute;
+    pointer-events: none;
+    width: 100%; height: 100%;
+  }
+  section[aria-selected] { pointer-events: auto;}
+  body {display: none}
+  body.loaded {display: block}

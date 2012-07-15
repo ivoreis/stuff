@@ -1,0 +1,11 @@
+.row
+  .expression_links.span12
+    = link_to t('global.text.link.add_item'), new_expression_path, :id => 'new_expression_item', class: 'btn'
+
+.row.expression_content
+  .expression_side_list.span2
+    = render "expression_menu"
+  .expression_items_list.span10
+    = paginate @items
+    - @items.each do |item|
+      = render :partial => "item", :locals => {:item => item }

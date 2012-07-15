@@ -1,0 +1,36 @@
+.timeline_entry_social_links.float_and_clear{id: "social_of_#{entry.class.to_s}_#{entry.id}"}
+  .tools
+    .label_date #{l entry.created_at, format: :timeline }
+    .separator
+    .vote_counts
+      .show_votes.t_popover{:rel=>"popover", "data-content" => entry.like_votes.collect(&:voter).collect(&:name).join(', ') , "data-original-title"=>"Likes"}
+        #{entry.count_likes}
+        %i.icon-thumbs-up
+    .separator
+    -if current_person == entry.owner
+      .tag_info
+        .show_tags.t_popover{:rel=>"popover", "data-content" => entry.all_tags_list_on(:tags).join(', ') , "data-original-title"=>"Tags"}
+          #{entry.base_tags.count}
+          %i.icon-tags
+      .separator
+    .comment_info
+      .show_comments
+        #{entry.comment_threads.count}
+        %i.icon-edit
+  .labels
+    .label_vote
+      .vote_up
+        = link_to ( entry.voted_on_by?(current_person) ?  t('action.unlike')  : t('action.like')  ), vote_path(type: entry.class.to_s, id: entry.id), :remote => true, :method => :post, :class => "vote_menu_toggle"
+    .separator
+    -if current_person == entry.owner
+      .label_tag
+        = link_to t('action.tag'), "#", :class => "tag_menu_toggle", "onclick"=>"show_tag_menu(this);return false;"
+      .separator
+    .label_comment
+      =link_to t('action.comment'), "#", :class => "comment_menu_toggle", "onclick"=>"show_comment_menu(this);return false;"
+  .extended_options
+    -if current_person == entry.owner
+      .toggle_menu.tag_menu
+        = render :partial => "members/tag_form", :locals => {entry: entry}
+    .toggle_menu.comment_menu
+      = render :partial => "members/comment_form", :locals => {entry: entry}

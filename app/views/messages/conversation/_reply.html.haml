@@ -1,0 +1,6 @@
+- url = messages_path(conversation: conversation)
+= simple_form_for @message, url: url, :as=> "message", :validate => true do |f|
+  .field
+    = f.input :body, :as => :text, :required => false, :label=> false, :placeholder => t('global.text.message.body.explain')
+  .actions
+    = f.button :submit, t('action.send')

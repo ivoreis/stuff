@@ -1,0 +1,26 @@
+.new_entry_form
+  = simple_nested_form_for @member.timeline.entries.build, as: "timeline_post", :url => timeline_comment_path(@member.slug) do |f|
+    .timeline_comment.span6.offset1
+      %i.big-icon-comment
+      = f.input :content, :as => :text, :label => false, :input_html => {id: "timeline_post_area", rows: 2, :name=>"body"}, :placeholder => "#{t('global.text.member.say_something')}"
+      #image_preview
+      = f.simple_fields_for :attachments, @member.timeline.entries.build.build_attachment do |a|
+        = a.input :content, :as => :file, :label => "#{t('global.text.member.add_something')}", :label_html =>{id: "label_attachment"}, :input_html => { onchange: "handleFiles(this.files, '#image_preview', extra_code)", name: "attachment", id: "file_attachment"}
+      = f.button :submit, t('action.create')
+
+:javascript
+  $('#timeline_post_area').on('click', function(){
+    $(this).attr('rows', 4);
+    $(".timeline_comment").css("height", "auto");
+  });
+
+
+  function extra_code(){
+    $("#remove_attach").remove();
+    $('#image_preview').before("<button  class='close' id='remove_attach'>×</button>");
+    $("#remove_attach").on('click', function(){
+      $('#image_preview').html("") ;
+      $("#file_attachment").val("");
+      $("#remove_attach").remove();
+    });
+  }

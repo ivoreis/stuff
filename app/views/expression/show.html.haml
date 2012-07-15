@@ -1,0 +1,18 @@
+- content_for :breadcrumbs do
+  .breadcrumb
+    = link_to t('global.text.link.expression'), expression_index_path
+    %span.divider »
+    #{@item.title}
+.row
+.item_view_info.span5
+  .item_view_title #{@item.title}
+  .item_view_content
+    %dl
+      %dt Author
+      %dd #{@item.owner.name}
+      %dt Content
+      %dd.content #{@item.content}
+  .item_link
+    = link_to t('action.download'), @item.attachment.content.url, class: 'btn btn-large' if @item.attachment
+.preview_container.span2
+  = image_tag url_for_preview(@item.attachment), class: "file_preview"

@@ -1,0 +1,19 @@
+%ul.nav.nav-list
+  %li.nav-header #{t('member.profile.label.new')}
+  %li.active
+    %a{:href => "#myjournal", "data-toggle"=>"tab"}
+      %i.icon-align-justify
+      #{t("global.text.myjournal")}
+  %li
+    %a{:href=>"#myfeed", "data-toggle"=>"tab"}
+      %i.icon-comment
+      #{t("global.text.myfeed")}
+  %li.nav-header #{t('member.profile.label.tools')}
+  %li
+    %a{:href => "#following", "data-toggle"=>"tab"}
+      %i.icon-eye-open
+      #{t("global.text.following")}
+  %li
+    %a{:href => "#followed", "data-toggle"=>"tab"}
+      %i.icon-eye-open
+      #{t("global.text.followed")}

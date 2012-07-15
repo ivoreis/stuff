@@ -1,0 +1,193 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  time:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+      full: "%B %d, %Y • %H:%M"
+      timeline: "%Y/%m/%d • %H:%M"
+  datetime:
+    distance_in_words:
+      half_a_minute: "half a minute ago"
+      less_than_x_seconds:
+        one:   "less than 1 second ago"
+        other: "less than %{count} seconds ago"
+      x_seconds:
+        one:   "1 second ago"
+        other: "%{count} seconds ago"
+      less_than_x_minutes:
+        one:   "less than a minute ago"
+        other: "less than %{count} minutes ago"
+      x_minutes:
+        one:   "1 minute ago"
+        other: "%{count} minutes ago"
+      about_x_hours:
+        one:   "1 hour ago"
+        other: "%{count} hours ago"
+      x_days:
+        one:   "1 day ago"
+        other: "%{count} days ago"
+      about_x_months:
+        one:   "1 month ago"
+        other: "%{count} months ago"
+      x_months:
+        one:   "1 month ago"
+        other: "%{count} months ago"
+      about_x_years:
+        one:   "1 year ago"
+        other: "%{count} years ago"
+      over_x_years:
+        one:   "over 1 year ago"
+        other: "over %{count} years ago"
+      almost_x_years:
+        one:   "almost 1 yeara ago"
+        other: "almost %{count} yearsa go"
+    prompts:
+      year:   "Year"
+      month:  "Month"
+      day:    "Day"
+      hour:   "Hour"
+      minute: "Minute"
+      second: "Seconds"
+      today: "Today"
+      week: "Week"
+  global:
+    text:
+      wall: "Wall"
+      info: "Info"
+      contacts: "Contacts"
+      myjournal: "My Journal"
+      myfeed: "My Feed"
+      personalinfo: "Personal Info"
+      social: "Social"
+      following: "Following"
+      followed: "Followed"
+      event:
+        new: "New event"
+        edit: "Edit event"
+        create: "creating event..."
+        update: "updating event..."
+        date_error: "The end-date should be after the start-date..."
+        title_error: "Please write some title..."
+        title_placeholder: "what are you doing?"
+        details_placeholder: "Some extra details?"
+        all_day_hint: "Is all day?"
+      library:
+        title_placeholder: "Insert entry title"
+        author_placeholder: "Insert author's name"
+        description_placeholder: "Insert short description about this item"
+        sort_items: "Sort"
+        all_files: "All files"
+      expression:
+        content_placeholder: "Share your artistic vein"
+        sort_items: "Sort"
+        all_files: "All expressions"
+      calendar:
+        confirm: "Are you sure about this change?"
+      topic_downcase:
+        one: "1 topic"
+        other: "%{count} topics"
+      message_downcase:
+        one: "1 message"
+        other: "%{count} messages"
+      member_downcase:
+        one: "1 member"
+        other: "%{count} members"
+      comment_downcase:
+        one: "1 comment"
+        other: "%{count} comments"
+      change_image: "Change your profile image"
+      choose_image: "Choose a new image to your profile"
+      welcome: "Welcome"
+      forum:
+        created_at: "created at"
+        created_by: "created by"
+      link:
+        profile: "Profile"
+        community: "Community"
+        manual: "Manual"
+        forum: "Forum"
+        calendar: "Calendar"
+        library: "Library"
+        expression: "Expression Area"
+        sign_in: "Sign in"
+        sign_out: "Sign out"
+        sign_up: "Sign up"
+        admin: "Admin"
+        notifications: "Notifications"
+        messages: "Messages"
+        settings: "Settings"
+        add_item: "Add Item"
+      member:
+        say_something: "Say something..."
+        tag_placeholder: "Enter tags here, comma separated..."
+        comment_placeholder: "Write some comment..."
+      message:
+        text: "Message"
+        explain: "Write some content..."
+        to:
+          text: "To"
+          explain: "Choose to whom?"
+        subject:
+          text: "Subject"
+          explain: "What's the subject?"
+        body:
+          explain:
+            "Write some content..."
+      controller:
+        messages: "Messages"
+        profile: "Profile"
+        community: "Community"
+        manual: "Manual"
+        forum: "Forum"
+        calendar: "Calendar"
+        library: "Library"
+        members: "Members"
+        expression: "Expression Area"
+  member:
+    profile:
+      label:
+        new: "New"
+        about: "About me"
+        tools: "Social tools"
+      bio: "Biography"
+      about: "About"
+      gender: "Gender"
+      birthday: "Birthday"
+      country: "Country"
+    since: "Member since"
+    followers: "Followers"
+    following: "Following"
+    common_friends: "Common friends"
+    you: "You"
+  action:
+    cancel: "Cancel"
+    send: "Send"
+    update: "Update"
+    follow: "Follow"
+    unfollow: "Unfollow"
+    create: "Create"
+    message: "Message"
+    like: "Like"
+    unlike: "Unlike"
+    comment: "Comment"
+    tag: "Tag"
+    close: "Close"
+    add: "Add"
+
+  calendar:
+    month: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    month_short: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    day: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    day_short: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    day_min: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+  activity:
+    comment:
+      create: "%{owner} leaved a comment in %{traceable}"
+    topic:
+      create: "%{owner} created topic %{traceable}"
+    followship:
+      create: "%{owner} is now following %{traceable}"

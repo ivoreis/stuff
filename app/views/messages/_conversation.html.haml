@@ -1,0 +1,13 @@
+.span11.conversation{id: "conversation_#{conversation.id}"}
+  .conversation_sender
+    %h3
+      = link_to "#{receivers_of conversation}", params.merge(view: conversation.id), :class => 'receivers_placeholder'
+    .conversation_sender_info
+      = image_tag avatar_of(conversation.receivers.last, :thumb), {width: 100, heigth: 100}
+  .conversation_last_message
+    - if conversation.messages.last.sender == current_person
+      .last_message_by_me.icon-share-alt
+    .conversation_message_last_body
+      #{conversation.messages.last.body}
+  .conversation_last_message_sent_when
+    #{time_ago_in_words conversation.messages.last.updated_at}

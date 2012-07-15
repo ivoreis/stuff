@@ -1,0 +1,37 @@
+= content_for :current_label do
+  #{@member.name}
+.member_content
+  .member_header.row
+    .span3
+      .member_header_image
+        = image_tag avatar_of(@member, :large)
+    .span8.offset0
+      .member_header_content
+        .member_header_name #{@member.name.titleize}
+        .member_header_social_info
+          = render partial: "social_info"
+        .member_header_social_links
+          - if current_person != @member
+            - if current_person.followees.include?(@member)
+              = link_to t("action.unfollow"), unfollow_path(id: @member), remote: true, method: :POST, id:'unfollow_btn', class: 'btn btn-large'
+            - else
+              = link_to t("action.follow"), follow_path(id: @member), remote: true, method: :POST, id:'follow_btn', class: 'btn btn-large'
+            -#= link_to t("action.message"), "#", class: 'btn btn-large'
+          - else
+            .you_tag.label.label-info #{t("member.you")}
+  .member_body.row
+    .tabbable.tabs-left.span2
+      %ul.nav.nav-tabs
+        %li.active
+          %a{:href =>"#memberwall", "data-toggle"=>"tab"} #{t("global.text.wall")}
+        %li
+          %a{:href =>"#memberinfo", "data-toggle"=>"tab"} #{t("global.text.info")}
+        %li
+          %a{:href =>"#membercontacts", "data-toggle"=>"tab"} #{t("global.text.contacts")}
+    .tab-content.span9
+      .tab-pane.active{:id =>"memberwall"}
+        = render partial: "wall", :locals => {entries: @profile_entries}
+      .tab-pane{:id => "memberinfo"}
+        = render partial: "basic_info"
+      .tab-pane{:id => "membercontacts"}
+        = render partial: "member_contacts"

@@ -1,0 +1,15 @@
+.navigation
+  %ul.nav.nav-pills
+    - if user_signed_in?
+      %li
+        = link_to t('global.text.link.profile'), main_app.profile_path
+      %li
+        = link_to t('global.text.link.community'), main_app.community_path
+      %li
+        = link_to t('global.text.link.forum'), main_app.forum_path
+      %li
+        = link_to t('global.text.link.calendar'), main_app.calendar_path
+      %li
+        = link_to t('global.text.link.library'), main_app.library_index_path
+      %li
+        = link_to t('global.text.link.expression'), main_app.expression_index_path

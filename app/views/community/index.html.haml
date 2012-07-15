@@ -1,0 +1,7 @@
+.community_navigation
+  = paginate @members
+.community_content.row
+  .community_search.span2
+    = render "community/community_menu"
+  .community_entries.span8.offset1
+    = render partial: "community/member", collection: @members

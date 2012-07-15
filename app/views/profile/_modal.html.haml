@@ -1,0 +1,21 @@
+#myModal.modal.hide.fade{:style=>"display: none"}
+  .modal-header
+    %button.close{ "data-dismiss" => 'modal'} ×
+    %h3 #{t('global.text.change_image')}
+  .modal-body
+    %h4 #{t('global.text.choose_image')}
+    .image_placeholder
+      = image_tag avatar_of(current_person), :id => "cropbox"
+    -#.image_preview
+    -#  = image_tag avatar_of(@person), :id => "preview"
+    .avatar_form
+      = simple_form_for current_person.profile, :as => :profile, :url => avatar_path do |f|
+        -#- for attribute in [:crop_x, :crop_y, :crop_h, :crop_w]
+        -#  = f.hidden_field attribute, :id => attribute
+        .field
+          = f.input :avatar, :as => :file, :label=> false, :input_html => {:onchange => "handleFiles(this.files, '.image_placeholder' )" }
+        .actions
+          = f.button :submit, t('action.update')
+
+  .modal-footer
+    %a{:href=> "#", :class=> "btn", "data-dismiss" => "modal"}  #{t('action.close')}

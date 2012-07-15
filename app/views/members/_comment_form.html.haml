@@ -1,0 +1,5 @@
+.new_comment_entry
+  = text_area_tag 'comments', nil, :placeholder => t('global.text.member.comment_placeholder')
+  %a.btn.btn-small.commit_comment{style:"margin-top: 8px;", :onclick=>"commit_comment(this); return false;"} #{t('action.add')}
+.comment_list
+  = render partial: "members/comment", :collection => entry.comments, :as => :comment

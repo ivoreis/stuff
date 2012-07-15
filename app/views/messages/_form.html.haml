@@ -1,0 +1,12 @@
+- url = messages_path
+= simple_form_for @message, url: url, :as=> "message", :validate => true do |f|
+  .field
+    = f.input :receivers, :required => false, :label => t('global.text.message.to.text'), :placeholder => t('global.text.message.to.explain')
+    = f.input :subject, :required => false, :label=> t('global.text.message.subject.text'), :placeholder => t('global.text.message.subject.explain')
+    = f.input :body, :as => :text, :required => false, :label=> t('global.text.message.text'), :placeholder =>  t('global.text.message.explain')
+  .actions
+    = link_to t('action.cancel'), :back, :class => 'btn cancel'
+    = f.button :submit
+
+:javascript
+  $('#message_receivers').tokenInput('#{members_list_path}', {theme: 'facebook', preventDuplicates: true});

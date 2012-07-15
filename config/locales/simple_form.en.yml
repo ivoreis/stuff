@@ -1,0 +1,26 @@
+en:
+  simple_form:
+    labels:
+      defaults:
+        username: 'User name'
+        password: 'Password'
+        title: 'Title'
+        details: 'Details'
+        starts_at: 'Starts at'
+        ends_at: 'Ends at'
+        starts_hour: 'Starts hour'
+        ends_hour: 'Ends hour'
+        all_day: 'All day'
+        description: 'Description'
+        author: 'Author'
+        new:
+          username: 'Choose a username'
+    hints:
+      defaults:
+        username: 'User name to sign in.'
+        password: 'No special characters, please.'
+    placeholders:
+      defaults:
+        username: 'Your username'
+        password: '****'
+        email: 'example@domain.com'

@@ -1,0 +1,13 @@
+.member_header_social_info_entry
+  %span.content_label #{t("member.since")}:
+  %span.content_text #{l @member.created_at}
+.member_header_social_info_entry
+  %span.content_label #{t("member.following")}:
+  %span.content_text #{@member.followees.count}
+.member_header_social_info_entry
+  %span.content_label #{t("member.followers")}:
+  %span.content_text #{@member.followers.count}
+- unless @member == current_person
+  .member_header_social_info_entry
+    %span.content_label #{t("member.common_friends")}:
+    %span.content_text #{@member.friends_in_common(current_person).count}

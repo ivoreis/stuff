@@ -1,0 +1,12 @@
+- if current_person
+  .breadcrumb
+    = link_to "#{t('global.text.controller.'+remove_engine_from_string(params[:controller]))}", "/#{params[:controller]}"
+    - if params[:action]!= "index"
+      %span.divider
+        »
+        - if content_for? :current_label
+          %span
+            = yield :current_label
+        - else
+          %span
+            #{t('global.text.action.'+params[:action])}

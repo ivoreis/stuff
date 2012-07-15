@@ -1,0 +1,4 @@
+.compose_message
+  = link_to t('action.compose'), messages_compose_path, :class => 'btn'
+- @conversations.each do |conversation|
+  = render "conversation", conversation: conversation

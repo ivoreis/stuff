@@ -1,0 +1,4 @@
+.comment_entry{id: "comment_#{comment.id}"}
+  .comment_commenter_image #{image_tag avatar_of(comment.commenter, :thumb), {width: 50, height: 50}}
+  = render partial: "members/comment_extra_info", :locals => {comment: comment}
+  .comment_body #{comment.body.html_safe}

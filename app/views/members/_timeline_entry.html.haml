@@ -1,0 +1,11 @@
+- if entry.id
+  = content_tag :div, class: "activity_entry" do
+    .timeline_entry_poster_avatar
+      = image_tag avatar_of(entry.owner, :thumb), {width: 80, height: 80}
+    .timeline_entry_body.span6
+      .timeline_entry_poster.float_and_clear #{put_name(entry)}
+      .timeline_entry_content.float_and_clear #{entry.content.html_safe}
+      - if entry.attachment
+        .timeline_entry_file.float_and_clear
+          = image_tag entry.attachment.content.url, class: "timeline_entry_attachment"
+      = render :partial => "members/social_links", :locals => {entry: entry}

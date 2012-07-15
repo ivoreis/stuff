@@ -1,0 +1,210 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pt:
+  time:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d %b"
+      long: "%d %B, %Y"
+      full: "%d %B, %Y • %H:%M"
+      timeline: "%d/%m/%Y • %H:%M"
+  datetime:
+    distance_in_words:
+      half_a_minute: "meio minuto atrás"
+      less_than_x_seconds:
+        one:   "menos de 1 segundo atrás"
+        other: "menos de %{count} segundos atrás"
+      x_seconds:
+        one:   "1 second atrás"
+        other: "%{count} segundos atrás"
+      less_than_x_minutes:
+        one:   "menos de um minuto atrás"
+        other: "menos de %{count} minutos atrás"
+      x_minutes:
+        one:   "1 minuto atrás"
+        other: "%{count} minutos atrás"
+      about_x_hours:
+        one:   "1 hora atrás"
+        other: "%{count} horas atrás"
+      x_days:
+        one:   "1 dia atrás"
+        other: "%{count} dias atrás"
+      about_x_months:
+        one:   "1 mês atrás"
+        other: "%{count} mês atrás"
+      x_months:
+        one:   "1 mês atrás"
+        other: "%{count} mês atrás"
+      about_x_years:
+        one:   "1 ano atrás"
+        other: "%{count} anos atrás"
+      over_x_years:
+        one:   "mais de 1 year atrás"
+        other: "mais de %{count} anos atrás"
+      almost_x_years:
+        one:   "quase 1 ano atrás"
+        other: "quase %{count} ano atrás"
+    prompts:
+      year:   "Ano"
+      month:  "Mês"
+      day:    "Dia"
+      hour:   "Hora"
+      minute: "Minuto"
+      second: "Segundo"
+      today: "Hoje"
+      week: "Semana"
+  global:
+    text:
+      wall: "Parede"
+      info: "Info"
+      contacts: "Contactos"
+      myjournal: "Minha informação"
+      myfeed: "Novidades"
+      personalinfo: "Informação Pessoal"
+      social: "Social"
+      event:
+        new: "Novo evento"
+        edit: "Editar evento"
+        create: "a criar evento..."
+        update: "a actualizar evento..."
+        date_error: "A data final tem que ser superior à inicial..."
+        title_error: "Escreva um titulo..."
+        title_placeholder: "Que quer agendar?"
+        details_placeholder: "Alguns detalhes extra?"
+        all_day_hint: "Dia completo?"
+      library:
+        title_placeholder: "Escreva um titulo"
+        author_placeholder: "Escreva o nome do autor"
+        description_placeholder: "Escreva uma breve descrição"
+        sort_items: "Filtrar"
+        all_files: "Todos"
+      member:
+        say_something: "O que esta a pensar?"
+        add_something: "Adicione algo"
+      community:
+        last_seen: "visto a"
+        member_since: "membro desde"
+        menu: "Menu"
+        all: "Todos"
+        me: "Eu"
+      calendar:
+        confirm: "Certeza que pertende alterar?"
+      topic_downcase:
+        one: "1 tópico"
+        other: "%{count} tópicos"
+      message_downcase:
+        one: "1 mensagem"
+        other: "%{count} mensagens"
+      member_downcase:
+        one: "1 membro"
+        other: "%{count} membros"
+      comment_downcase:
+        one: "1 comentário"
+        other: "%{count} comentários"
+      change_image: "Altera a sua imagem"
+      choose_image: "Escolha a nova imagem"
+      welcome: "Olá"
+      forum:
+        created_by: "criado por"
+        created_at: "criado à"
+        new_topic: "Novo tópico"
+        comment_deleted: "Comentário apagado"
+      link:
+        profile: "Perfil"
+        community: "Comunidade"
+        manual: "Manual"
+        forum: "Forum"
+        calendar: "Calendário"
+        library: "Livraria"
+        expression: "Expressão"
+        sign_in: "Entrar"
+        sign_out: "Sair"
+        sign_up: "Registar"
+        admin: "Admin"
+        notifications: "Notificações"
+        messages: "Mensagens"
+        settings: "Definições"
+        add_item: "Adicionar item"
+      message:
+        text: "Mensagem"
+        explain: "Escreva algum conteúdo..."
+        to:
+          text: "Para"
+          explain: "Para quem?"
+        subject:
+          text: "O que"
+          explain: "Esta mensagem é sobre o que?"
+        body:
+          explain:
+            "Escreva algum conteúdo..."
+      controller:
+        messages: "Mensagens"
+        profile: "Perfil"
+        community: "Comunidade"
+        manual: "Manual"
+        forum: "Forum"
+        calendar: "Calendário"
+        library: "Livraria"
+        members: "Membros"
+        expression: "Expressão"
+      action:
+        settings: "Definições"
+        notifications: "Notificações"
+        compose: "Nova mensagem"
+        new: "Novo"
+  member:
+    profile:
+      label:
+        new: "Novo"
+        about: "Sobre mim"
+        tools: "Ferramentas"
+      bio: "Biografia"
+      about: "Sobre"
+      gender: "Sexo"
+      birthday: "Aniversário"
+      country: "País"
+    since: "Membro desde"
+    followers: "Está a seguir"
+    following: "Estão a segui-lo"
+    common_friends: "Amigos em comum"
+    you: "Eu"
+  action:
+    cancel: "Cancelar"
+    send: "Enviar"
+    update: "Atualizar"
+    follow: "Seguir"
+    unfollow: "Deixar de seguir"
+    create: "Criar"
+    message: "Mensagem"
+    close: "Fechar"
+    reply: "Responder"
+    edit: "Editar"
+    delete: "Eliminar"
+    post: "Postar"
+    back: "Voltar"
+    close: "Fechar"
+    download: "Transferir"
+    new_topic: "Novo tópico"
+    compose: "Criar nova"
+  calendar:
+    month: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+    month_short: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"]
+    day: ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"]
+    day_short: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"]
+    day_min: ["Do", "Se", "Te", "Qr", "Qi", "Se", "Sa"]
+  activity:
+    comment:
+      create: "%{owner} comentou %{traceable}"
+    topic:
+      create: "%{owner} criou o tópico %{traceable}"
+    followship:
+      create: "%{owner} está agora a seguir %{traceable}"
+  views:
+    pagination:
+      previous: "Anterior"
+      next: "Seguinte"
+      first: "Primeiro"
+      last: "Último"
+
+

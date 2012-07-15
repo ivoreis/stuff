@@ -1,0 +1,1 @@
+Forum.user_class = "Person"

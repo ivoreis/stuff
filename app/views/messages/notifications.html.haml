@@ -1,0 +1,6 @@
+- @notifications.each do |notification|
+  .notification_entry
+    .notification_sender
+      #{notification.sender.name.capitalize}
+    .notification_action
+      #{notification.notified_object_type}

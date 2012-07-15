@@ -1,0 +1,23 @@
+.profile_update_form.span8.offset1
+  = simple_form_for @member.profile, :url  => update_profile_path do |f|
+    .labels
+      = f.input :name
+      = f.input :gender, :collection => [:male, :female]
+      = f.input :birthday, :as => :string, :input_html => {id: "birthday_selector"}
+      = f.input :country, :collection => countries_list
+    .extended_info
+      = f.input :bio, :as => :text, :input_html => {rows: 5, class: 'span6'}
+      = f.input :about, :as => :text, :input_html => {rows: 5, class: 'span6'}
+    .actions
+      = f.button :submit, t('action.update')
+
+:javascript
+  $( "#birthday_selector" ).datepicker({
+                                monthNames: #{t('calendar.month')},
+                                monthNamesShort: #{t('calendar.month_short')},
+                                dayNamesMin: #{t('calendar.day_min')},
+                                dayNamesShort: #{t('calendar.day_short')},
+                                changeMonth: true,
+                                changeYear: true,
+                                yearRange: "-120:+0"
+                            });

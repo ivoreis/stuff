@@ -1,0 +1,16 @@
+= paginate people
+- people.each do |p|
+  - person = ( defined?(friend_type) and friend_type == :followee ) ? p.receiver : p.sender
+
+  .person_entry{id: "#{person.class.to_s.downcase}_#{person.slug}"}
+    .entry_avatar_image
+      = image_tag avatar_of(person, :thumb), {:width => 80}
+    .entry_header #{h person.name.titleize}
+
+  :javascript
+    $(#{person.class.to_s.downcase}_#{person.slug}).click(function(){
+      string = $(this).attr('id');
+      id = string.substring(string.indexOf("_")+1,string.length);
+      window.location = "members/view/"+id;
+    });
+

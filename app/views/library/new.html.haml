@@ -1,0 +1,14 @@
+.row
+  .library.offset2.span9
+    .preview_placeholder
+      = image_tag "no_preview.jpg"
+    .new_item_form
+      = simple_form_for @item, :as => "item", :url => library_index_path do |f|
+        .field
+          = f.input :title, :placeholder => t('global.text.library.title_placeholder')
+          = f.input :author, :placeholder => t('global.text.library.author_placeholder')
+          = f.input :description, :as => :text, :input_html => {rows: 5, style: "width: 400px"} , :placeholder => t('global.text.library.description_placeholder')
+          = f.simple_fields_for :attachment, @item.build_attachment do |a|
+            = a.input :content, :as => :file, :label=> false, :input_html => {:onchange => "handleFiles(this.files, '.preview_placeholder')" }
+        .actions
+          = f.button :submit, t('global.text.link.add_item')

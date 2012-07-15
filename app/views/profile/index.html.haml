@@ -1,0 +1,68 @@
+.profile_content.row
+  .span3.offset1.profile_left
+    .personal_header
+      .header_personal_image
+        = render "modal"
+        .image_container
+          = image_tag avatar_of(current_person), "data-toggle"=> :modal, :href=>"#myModal"
+    .side_menu
+      = render "side_menu"
+  .span8.tab-content.profile_right
+    .tab-pane.active{:id =>"myjournal"}
+      = render :partial => "members/wall", :locals => {entries: @profile_entries, comment: true}
+    .tab-pane{:id =>"myfeed"}
+      = render :partial => "members/wall", :locals => {entries: @all_entries}
+    .tab-pane{:id =>"following"}
+      = render :partial => "profile/following"
+    .tab-pane{:id =>"followed"}
+      = render :partial => "profile/followed"
+:javascript
+  $('.t_popover').popover();
+
+  function show_tag_menu(obj){
+    $(obj).parent().parent().next().find('.comment_menu').hide();
+    $(obj).parent().parent().next().find('.tag_menu').toggle();
+  }
+
+  function show_comment_menu(obj){
+    $(obj).parent().parent().next().find('.tag_menu').hide();
+      $(obj).parent().parent().next().find('.comment_menu').toggle();
+  }
+
+  function ajax_call(type, content, url){
+   $.ajax(
+     {
+       type: type,
+       url: url,
+       data: content,
+       success: function(data){
+       },
+       dataType: 'script'
+     }
+   ).error(function(f) { console.log(f);})
+  }
+
+  function commit_tag(obj){
+    commit_command(obj,'#{tag_path}' )
+  }
+
+  function commit_comment(obj){
+    commit_command(obj,'#{comment_path}' )
+  }
+
+  function commit_command(obj,path){
+    var value = $(obj).prev().val();
+    var id = $(obj).closest('.timeline_entry_social_links').attr('id');
+    var content = id.replace("social_of_","").split("_");
+    var hash = {
+                 payload: {
+                   id: content[1],
+                   type: content[0],
+                   value: value,
+                 }
+               };
+    ajax_call("post", hash, path);
+  }
+
+
+

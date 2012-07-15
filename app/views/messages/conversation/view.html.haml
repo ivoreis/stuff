@@ -1,0 +1,6 @@
+.fixed_bar
+  %h2 #{receivers_of conversation}
+.messages_container
+  = render :partial => 'messages/conversation/message', collection: conversation.messages
+.new_message
+  = render "messages/conversation/reply", params.merge({conversation: conversation.id})

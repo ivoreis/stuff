@@ -1,0 +1,37 @@
+pt:
+  simple_form:
+    labels:
+      defaults:
+        username: 'Nome utilizador'
+        password: 'Palava-chave'
+        title: 'Titulo'
+        details: 'Detalhes'
+        starts_at: 'Começa às'
+        ends_at: 'Terminas às'
+        starts_hour: 'Hora inicio'
+        ends_hour: 'Hora fim'
+        all_day: 'Dia completo'
+        description: 'Descrição'
+        name: "Nome"
+        gender: "Sexo"
+        bio: "Biografia"
+        about: "Informação adicional"
+        birthday: "Aniversário"
+        author: 'Autor'
+        content: "Conteúdo"
+        new:
+          username: 'Escolha um nome de utilizador'
+    hints:
+      defaults:
+        username: 'Nome de utilizador para entrar'
+        password: 'Sem nenhum carácter especial.'
+    placeholders:
+      defaults:
+        username: 'Nome de utilizador'
+        password: '*********'
+        email: 'examplo@dominio.pt'
+    options:
+      person_profile:
+        gender:
+          male: "Homem"
+          female: "Mulher"
