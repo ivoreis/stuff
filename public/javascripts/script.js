@@ -78,14 +78,14 @@ function setupTouchEvents() {
 /* Adapt the size of the slides to the window */
 
 window.onresize = function() {
-    var sx = document.body.clientWidth / window.innerWidth;
-    var sy = document.body.clientHeight / window.innerHeight;
-    var transform = "scale(" + (1/Math.max(sx, sy)) + ")";
-    document.body.style.MozTransform = transform;
-    document.body.style.WebkitTransform = transform;
-    document.body.style.OTransform = transform;
-    document.body.style.msTransform = transform;
-    document.body.style.transform = transform;
+     var sx = document.body.clientWidth / window.innerWidth;
+     var sy = document.body.clientHeight / window.innerHeight;
+     var transform = "scale(" + (1/Math.max(sx, sy)) + ")";
+     document.body.style.MozTransform = transform;
+     document.body.style.WebkitTransform = transform;
+     document.body.style.OTransform = transform;
+     document.body.style.msTransform = transform;
+     document.body.style.transform = transform;
 }
 function getDetails(idx) {
     var s = document.querySelector("section:nth-of-type("+ idx +")");

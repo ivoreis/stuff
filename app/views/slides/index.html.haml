@@ -1,41 +1,614 @@
 - content_for :sections do
   %section
     %h1
-      A novel 
-      %strong health social environment 
-      to improve the care of 
-      %strong Parkinson’s 
-      disease in 
+      A novel
+      %strong health social environment
+      to improve the care of
+      %strong Parkinson’s
+      disease in
       %strong Portugal
     %h3
       Faculdade de Engenharia da Universidade do Porto
     %footer
-      .strong Ivo Reis, FEUP &bull; 2012
+      .strong Ivo Reis, FEUP • 2012
 
   %section.index_card
-    %h1.strong.slop Roadmap
-    %span Problem
-    %span How I found a possible solution?
-    %span How the solution was evaluated?
-    
-  %section.chapter.fullscreen#problem_chap
-    .mark
-    %strong.over_text.strong.slop Problem?
-    %img#problem_image{:src => "../images/problem.jpg"}    
+    %h1.strong.underscore Roadmap
+    %span Problem definition
+    %span Understanding the problem and the patients
+    %span Solving the problem alongside the patients
+    %span Evaluation
+    %span Final considerations
 
-  %section.chapter.fullscreen#solution_chap
+  %section#problem_chap.chapter.fullscreen
     .mark
-    %strong.over_text.strong.slop How I found a possible solution?
-    %img#solution_image{:src => "../images/solution2.jpg"}    
+    %strong.over_text.strong.underscore Problem definition
+    %img#problem_image{:src => "images/problem.jpg"}
 
-  %section.chapter.fullscreen#evaluation_chap
+  %section
+    %header Problem definition
+    %h2.strong Context
+    %h3 Parkinson
+    %div
+      #parkinson_list
+        %ul
+          %li Life-changing disease
+          %li Patients and caregivers present high levels of loneliness and depression
+          %li No official information is yet available about the number of Parkinson patients in Portugal and countries with Portuguese as official language
+          %li Most common symptoms are muscle rigidity, tremors and gait difficulty
+      %img#tulip{:src => "images/tulip.jpg"}
+
+  %section
+    %header Problem definition
+    %h2.strong Context
+    %h3 Project
+    %div
+      #inova_list
+        %ul
+          %li Inovamais is consultant agency responsible by this project
+          %li
+            This project is one of the
+            %strong eigth components
+            of a wider project called
+            %strong TICE.Healthy
+          %li The main goal of TICE.Healthy is the creation of a bundle of online health services that will provide a central care and tools to patients, caregivers and health professionals
+      %img#inova{:src => "images/inova.jpg"}
+
+  %section
+    %header Problem definition
+    %h2.strong Research Problem
+    #research_question How to build a social community to aid the improvement of the life quality of Parkinson’s patients and caregivers in Portugal?
+
+  %section
+    %header Problem definition
+    %h2.strong Objectives
+    %div
+      %ul
+        %li Research the requirements of this new online health community
+        %li Implement the basic functionality of the social environment
+        %li Create a functional prototype as a proof of concept
+
+  %section
+    %header Problem definition
+    %h2.strong Contribution
+    %div
+      %ul
+        %li Introduce a social environment to the elderly population, patients and people who need to obtain support and never considered these new technologies
+        %li The generation of ideas and concepts alongside the patients using User-Centered Design methods
+        %li The creation of a social community based on open source technologies and using the latest releases/versions
+
+  %section#solution_under_chap.chapter.fullscreen
     .mark
-    %strong.over_text.strong.slop How the solution was evaluated?
-    %img#evaluation_image{:src => "../images/evaluation2.jpg"} 
+    %strong.over_text.strong.underscore Understanding the problem and the patients
+    %img#problem_under_image{:src => "images/Understanding.jpg"}
 
+  %section
+    %header Understanding the problem and the patients
+    %h2.strong Methodology
+    %h3 Patients and Technology
+    %div
+      %ul
+        %li Literature review
+        %li Exploratory and observational research
+
+  %section
+    %header Understanding the problem and the patients
+    %h2.strong Exploring current online health applications
+    %h3 Health applications
+    %div
+      %img#patientslikeme_image{:src => "images/patientslikeme.jpg"}
+        %img#curetogether_image{:src => "images/curetogether.jpg"}
+          %img#dailystrength_image{:src => "images/dailystrength.jpg"}
+
+  %section
+    %header Understanding the problem and the patients
+    %h2.strong Exploring current online health applications
+    %h3 Functionalities
+    #functionalities_list
+      %ul
+        %li Advanced search of resources
+        %li Synchronous and asynchronous communication tools
+        %li Graphical visualization of health information
+        %li Resources suggestion
+        %li Accessibility options to impaired users
+
+  %section
+    %header Understanding the problem and the patients
+    %h2.strong Exploring current online health applications
+    %h3 Parkinson.pt
+    %div
+      %ul
+        %li{:style => "width: 500px;"} Disease related news, national and international
+        %li A neurologist question and answer space
+        %li General Parkinson's information and related topics
+        %li A calendar of institutional activities and information about them
+    %img#apdpk{:src => "images/apdpk.jpg"}
+
+  %section
+    %header Understanding the problem and the patients
+    %h2.strong Patients and Technology
+    %h3 Concerns
+    %div
+      %ul
+        %li Privacy
+        %li Ethics research and patient doctor involvement
+        %li Security
+        %li Trust authenticity and quality of information
+        %li Accessibility and Usability
+
+  %section
+    %header Understanding the problem and the patients
+    %h2.strong Patients and Technology
+    %h3 Benefits
+    %div
+      %ul
+        %li Better disease copping
+        %li Improved emotional support
+        %li Long-tail access to information
+        %li No time and space barriers
+
+  %section#solution_chap.chapter.fullscreen
+    .mark
+    %strong.over_text.strong.underscore Solving the problem alongside the patients
+    %img#solution_image{:src => "images/solution2.jpg"}
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Methodology
+    #methodology
+      %ul
+        %li Discussion sessions
+        %li Personas
+        %li Scenarios
+        %li Mockups
+        %li Prototyping
+      %ul
+        %li Test-Driven-Development
+        %li End-User Testing
+        %li Usability Testing
+
+  %section
+    %header Solving the problem alongside the patients
+    %h1.strong
+      Discussion sessions
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Discussion sessions
+    %h3 Parkinson.pt
+    .quotes_list
+      %ul
+        %li This site is the best source of Parkinson’s information in Portuguese
+        %li Posted information sometimes is not trustworthy enough
+        %li The place does not propel the returning of the members
+        %li Some forum questions take a long time to be answered
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Discussion sessions
+    %h3 Parkinson in Portugal
+    .quotes_list
+      %ul
+        %li The Portuguese mentality isn't used to the concept of support groups and sometimes they think of it in a pejorative way
+        %li
+          Members are not willing to participate with just the intent of helping the next person,
+          they need something in return
+        %li Always the same members participating in the activities and at some point they start to feel bored
+        %li There is a lack of technological culture in elderly population
+
+  %section
+    %header Solving the problem alongside the patients
+    %h1.strong
+      Personas
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Personas
+    .personas
+      %table
+        %thead
+          %tr
+            %td Name
+            %td Role
+            %td Age
+            %td Profession
+        %tbody
+          %tr
+            %td Amélia
+            %td Patient
+            %td 61 years old
+            %td Retired school teacher
+          %tr
+            %td Amaro
+            %td Caregiver
+            %td 42 years old
+            %td Agronomy Engineer
+          %tr
+            %td Maria
+            %td Patient
+            %td 72 years old
+            %td Retired administrative
+          %tr
+            %td José
+            %td Patient
+            %td 36 years old
+            %td Manager
+          %tr
+            %td Manuela
+            %td Patient
+            %td 48 years old
+            %td Retired public employee
+          %tr
+            %td Júlio
+            %td Health Practitioner
+            %td 41 years old
+            %td Neurologist
+
+  %section
+    %header Solving the problem alongside the patients
+    %h1.strong
+      Scenarios
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Scenarios
+    .scenarios
+      %ol
+        %li
+          %dt.strong Artistic flair
+          %dd a place where users can express themselves and share their poems, drawings and handcrafted work
+        %li
+          %dt.strong Ask the community
+          %dd enables a place where users can ask about personal advices from current treatments to culinary or exercise tips
+        %li
+          %dt.strong Networking
+          %dd a place where users can share their thoughts and concerns with other users that share the same desires
+        %li
+          %dt.strong The appointment
+          %dd a agenda like place where all health related information can be stored and managed
+        %li
+          %dt.strong Knowledge for everyone
+          %dd a place where disease related magazines and books can be fixed so that everyone can read and learn from them
+
+  %section
+    %header Solving the problem alongside the patients
+    %h1.strong
+      Functionalities
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Functionalities
+    .functionalities
+      %ol
+        %li Should have a place to ask questions directly to health practitioners like a Q&A space.
+        %li Should provide information about news and research on Parkinson's disease, patients are very interested in this thematic
+        %li Should have a reward policy that will help the members engage in the community and promote participation.
+        %li Should create a informal environment where patients are able to talk about their interests.
+        %li Should provide support in several areas like: pharmacological, psychological, juridic, nutrition.
+
+  %section
+    %header Solving the problem alongside the patients
+    %h1.strong
+      Mockups
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Mockups
+    %h3 Profile
+    .mockups
+      %img{:alt => "", :src => "images/mockups/profile1.jpg"}/
+      %img{:alt => "", :src => "images/mockups/profile2.jpg"}/
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Mockups
+    %h3 Calendar & Forum
+    .mockups
+      %img{:alt => "", :src => "images/mockups/calendar_proto.jpg"}/
+      %img{:alt => "", :src => "images/mockups/forum_proto.jpg"}/
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Mockups
+    %h3 Library & Expression
+    .mockups
+      %img{:alt => "", :src => "images/mockups/library.jpg"}/
+      %img{:alt => "", :src => "images/mockups/expression.jpg"}/
+
+  %section
+    %header Solving the problem alongside the patients
+    %h1.strong
+      Prototype
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Prototype
+    %h3 Social Object
+    .prototype
+      %img#social_object{:src => "images/prototype/social_object.png"}
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Prototype
+    %h3 Roles
+    .prototype
+      %img#roles{:src => "images/prototype/roles.png"}
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Prototype
+    %h3 Permissions
+    .prototype
+      %ol
+        %li
+          %img#permission1{:src => "images/prototype/permission1.png"}
+        %li
+          %img#permission2{:src => "images/prototype/person_permission.png"}
+        %li{:style => "clear: both;margin-left: 120px;"}
+          %img#permission3{:src => "images/prototype/named_list_permission.png"}
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Prototype
+    %h3 Message System
+    .message_system
+      %img#message_system{:src => "images/prototype/message_system.png"}
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Prototype
+    %h3 Relations
+    .relations
+      %ol
+        %li
+          %img#followship{:src => "images/prototype/followship.png"}
+        %li
+          %img#friendship{:src => "images/prototype/friendship.png"}
+
+  %section
+    %header Solving the problem alongside the patients
+    %h2.strong Prototype
+    %h3 Timeline
+    .timeline
+      %img#timeline{:src => "images/prototype/timeline.png"}
+
+  %section#evaluation_chap.chapter.fullscreen
+    .mark
+    %strong.over_text.strong.underscore Evaluation
+    %img#evaluation_image{:src => "images/evaluation2.jpg"}
+
+  %section
+    %header Evaluation
+    %h1.strong Preliminary Evaluation
+
+  %section
+    %header Evaluation
+    %h2.strong Preliminary Evaluation
+    %h3 Evaluator & Objectives
+    .eval_object
+      .evaluator
+        %dt.strong Evaluator
+        %dd Physiotherapist
+      .objectives
+        %dt.strong Objectives
+        %dd
+          %ol
+            %li Evaluate the main features and basic social environment functionalities already implemented
+            %li General discussion about the environment and generation of ideas that were not originally envisaged
+
+  %section
+    %header Evaluation
+    %h2.strong Preliminary Evaluation
+    %h3 Findings
+    .preliminary_results
+      %ul
+        %li.pros Prototype had a visually appealing interface and didn't had any source of visual distraction
+        %li.pros Simple navigation was a good thing
+        %li.cons Creation of more contrast zones
+        %li.cons Create wider clickable areas
+        %li.idea Suggested creating recommendation page
+        %li.idea Suggested creating a classify page
+
+  %section
+    %header Evaluation
+    %h1.strong Final Evaluation
+
+  %section
+    %header Evaluation
+    %h2.strong Final Evaluation
+    %h3 Evaluator & Objectives
+    .eval_object
+      .evaluator
+        %dt.strong Evaluator
+        %dd 3 Testers
+      .objectives
+        %dt.strong Objectives
+        %dd
+          %ol
+            %li Evaluate user's overall acceptance of this new social environment
+            %li Evaluate usability metrics to analyze this prototype simplicity
+
+  %section
+    %header Evaluation
+    %h2.strong Final Evaluation
+    %h3 Testers
+    .testers
+      %table
+        %thead
+          %tr
+            %td Name
+            %td Age
+            %td Symptoms
+        %tbody
+          %tr
+            %td John
+            %td Mid-60's
+            %td Severe right-hand shaking
+          %tr
+            %td Jane
+            %td Mid-50's
+            %td Rigid rigth arm
+          %tr
+            %td Bill
+            %td Mid-40's
+            %td No visible symptoms
+
+  %section
+    %header Evaluation
+    %h2.strong Final Evaluation
+    %h3 Tasks
+    .tasks
+      %dl
+        %dt.strong Task 1
+        %dd Create a new Wall Entry
+        %dt.strong Task 2
+        %dd Create a new Forum Topic
+        %dt.strong Task 3
+        %dd Answer to a Forum Topic
+        %dt.strong Task 4
+        %dd Send a Message to a friend
+        %dt.strong Task 5
+        %dd Schedule an Event
+
+  %section
+    %header Evaluation
+    %h2.strong Final Evaluation
+    %h3 Metrics
+    %div
+      %ul
+        %li Clicks by task and tester
+        %li Performed time by task and tester
+        %li Experienced difficulty by task and tester
+        %li Overall prototype happiness
+
+  %section
+    %header Evaluation
+    %h2.strong Final Evaluation
+    %h3 Results - Click Test
+    .graph_container
+      %img.graph{:src => "images/test_click.jpg"}
+    .task_description
+      %dl
+        %dt Task 1
+        %dd Create a new Wall Entry
+        %dt Task 2
+        %dd Create a new Forum Topic
+        %dt Task 3
+        %dd Answer to a Forum Topic
+        %dt Task 4
+        %dd Send a Message to a friend
+        %dt Task 5
+        %dd Schedule an Event
+
+  %section
+    %header Evaluation
+    %h2.strong Final Evaluation
+    %h3 Results - Time Test
+    .graph_container
+      %img.graph{:src => "images/test_time.jpg"}
+    .task_description
+      %dl
+        %dt Task 1
+        %dd Create a new Wall Entry
+        %dt Task 2
+        %dd Create a new Forum Topic
+        %dt Task 3
+        %dd Answer to a Forum Topic
+        %dt Task 4
+        %dd Send a Message to a friend
+        %dt Task 5
+        %dd Schedule an Event
+
+  %section
+    %header Evaluation
+    %h2.strong Final Evaluation
+    %h3 Results - Difficulty Test
+    .graph_container
+      %img.graph.smaller_graph{:src => "images/test_difficulty.jpg"}
+    .task_description
+      %dl
+        %dt Task 1
+        %dd Create a new Wall Entry
+        %dt Task 2
+        %dd Create a new Forum Topic
+        %dt Task 3
+        %dd Answer to a Forum Topic
+        %dt Task 4
+        %dd Send a Message to a friend
+        %dt Task 5
+        %dd Schedule an Event
+
+  %section
+    %header Evaluation
+    %h2.strong Final Evaluation
+    %h3 Results - Satisfaction Test
+    .graph_container
+      %img.graph{:src => "images/test_happiness.jpg"}
+    <div class='task_description', style='left: 220px;'>
+    %dl
+      %dt 0
+      %dd Apathetic and indifferent
+      %dt 5
+      %dd Really excited and happy
+
+  %section
+    %header Evaluation
+    %h2.strong Final Evaluation
+    %h3 Findings
+    .final_results
+      %ul
+        %li.pros The prototype had simple and intuitive navigation
+        %li.pros Testers quickly understood the prototype organization
+        %li.pros Everyone was excited with this prototype and with all generated ideas
+        %li.cons Contrast issues with the upper navigational bar
+
+  %section
+    %header Evaluation
+    %h2.strong Final Evaluation
+    %h3 Findings
+    .final_results
+      %ul
+        %li.idea Suggested the creation of real time chat
+        %li.idea Suggested the creation of a search field to easily access information
+        %li.idea Suggested the creation of shortcuts to more advanced users
+        %li.idea Suggested the inclusion of online radios within the social environment
+
+  %section#final_chap.chapter.fullscreen
+    .mark
+    %strong.over_text.strong.underscore Final Considerations
+    %img#final_image{:src => "images/conclusion.jpg"}
+
+  %section
+    %header Final Considerations
+    %h2.strong Future Work
+    .future_work
+      %div
+        Important aspects were left as future work in order to fully evaluate the potential of this social environment.
+      %div
+        %ol
+          %li.strong Collaboration
+          %li.strong User Engagement
+          %li.strong Efficiency of member quality of life improvement
+      %div
+        To study these aspects the community should already be created and well-established and this can take several months to be achieved.
+
+  %section
+    %header Final Considerations
+    %h2.strong Wrap up
+    .wrap_up
+      %ul
+        %li Concerns found in the literature resembles to the concerns and issues reported by Portuguese Parkinson patients
+        %li This dissertation describe how User-Centered design methods were used in order to achieve a possible solution
+        %li As any other project this one had ups and downs but all the objectives were accomplished and lessons were learned
+        %li This project as an API and Tests to simplify the integration with the other modules from where this project belongs
+        %li Patients are willing and engaged to participate in the creation of new social environments because understand the benefits and the possibilities that technology enables
+
+  %section
+    .quote.strong No problem is too small or too trivial if we can really do something about it.
+    .quote_author Richard Feynman
+  
   %section
     .question Questions
+    %a.try_it{:href => "http://social.ivoreis.com"} Try it!
 
-  %section
-    %a.try_it.slop{href: "http://localhost:3000"} Try it!
 
