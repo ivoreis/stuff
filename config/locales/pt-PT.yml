@@ -89,7 +89,7 @@ pt:
         all: "Todos"
         me: "Eu"
       calendar:
-        confirm: "Certeza que pertende alterar?"
+        confirm: "Certeza que pretende alterar?"
       topic_downcase:
         one: "1 tópico"
         other: "%{count} tópicos"
